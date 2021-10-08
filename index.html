@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#first {
+				height: 80px;
+			}
+			.anniu {
+				cursor: pointer;
+			}
+			.a1 {
+				background-color: yellow;
+				font-size: 12px;
+				width: 50px;
+				margin-top: -10px;
+				display: none;
+			}
+			#second {
+				position: relative;
+			}
+			#second p,span {
+				cursor: pointer;
+			}
+			.b1 {
+				width: 200px;
+				height: 200px;
+				margin: auto;
+				position: absolute;
+				top: 190%;
+				left: 0;
+				right: 0;
+				background-color: #FFFF00;
+				display: none;
+			}
+			#fourth {
+				width: 500px;
+				height: 600px;
+				border: 1px solid;
+				padding: 0;
+				position: relative;
+			}
+			#fourth ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+			}
+			#fourth li {
+				float: left;
+				margin-right: 20px;
+			}
+			#fourth li img {
+				width: 100px;
+				height: 100px;
+			}
+			#fourth li:hover {
+				cursor: pointer;
+			}
+			#fifth img {
+				margin-left: -31px;
+				margin-bottom: -10px;
+				cursor: pointer;
+			}
+			.e3 {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 第一个作业 -->
+		<div id="first">
+			<h2>第一个</h2>
+			<button class="anniu">按钮</button>
+			<div class="a1">
+				<p>手拿把掐</p>
+			</div>
+		</div>
+		<!-- 第二个 -->
+		<h2>第二个</h2>
+		<div id="second">
+			<p>登陆</p>
+			<div class="b1">
+				<span>X</span>
+			</div>
+		</div>
+		<!-- 第三个 -->
+		<h2>第三个</h2>
+		<div id="third">
+			<input type="text" class="c" value="搜索" />
+		</div>
+		<!-- 第四个 -->
+		<h2>第四个</h2>
+		<div id="fourth">
+			<img src="img/1.png" width="100%" height="80%" class="d" >
+			<ul>
+				<li class="d1"><img src="img/1.png" ></li>
+				<li class="d2"><img src="img/2.png" ></li>
+				<li class="d3"><img src="img/3.png" ></li>
+				<li class="d4"><img src="img/4.png" ></li>
+			</ul>
+		</div>
+		<!-- 第五个 -->
+		<h2>第五个</h2>
+		<div id="fifth">
+			<input type="password" class="e" />
+			<img src="img/eyenone.png" class="e1" >
+			<img src="img/eyesee.png" class="e3" >
+		</div>
+		<!-- JS开始书写 -->
+		<script>
+		//第一个作业
+			const an = document.querySelector('.anniu');
+			const a1 = document.querySelector('.a1');
+				an.onmousemove = function() {
+					a1.style.display = 'block';
+				}
+				an.onmouseout = function() {
+					a1.style.display = 'none';
+				}
+		//第二个作业
+			const b = document.querySelector('#second p');
+			const b2 = document.querySelector('#second .b1');
+			const b3 = document.querySelector('#second .b1 span')
+				b.onclick = function() {
+					b2.style.display = 'block';
+				}
+				b3.onclick = function() {
+					b2.style.display = 'none';
+				}
+			// 第三个作业
+			let c = document.querySelector('#third .c');
+			c.onfocus = function() {
+				if (c.value === '搜索') {
+					c.value = '';
+				}
+			}
+			c.onblur = function(){
+				if (c.value === '') {
+					c.value = '搜索';
+				}
+			}
+			// 第四个作业
+			const d1 = document.querySelector('.d1');
+			const d2 = document.querySelector('.d2');
+			const d3 = document.querySelector('.d3');
+			const d4 = document.querySelector('.d4');
+			const d = document.querySelector('.d');
+			d1.onmouseover = function() {
+				d.src = 'img/1.png';
+			}
+			d2.onmouseover = function() {
+				d.src = 'img/2.png';
+			}
+			d3.onmouseover = function() {
+				d.src = 'img/3.png';
+			}
+			d4.onmouseover = function() {
+				d.src = 'img/4.png';
+			}
+			// 第五个
+			const e = document.querySelector('.e');
+			const e1 = document.querySelector('.e1');
+			const e3 = document.querySelector('.e3')
+			e1.onclick = function() {
+				e1.style.display = 'none';
+				e3.style.display = 'inline-block';
+				e.type = 'text';
+			}
+			e3.onclick = function() {
+				e1.style.display = 'inline-block';
+				e3.style.display = 'none';
+				e.type = 'password';
+			}
+			// let e2 =2;
+			// e1.onclick = function() {
+			// 	if (e2 % 2 ==0) {
+			// 		e1.src = 'img/eyesee.png';
+			// 		e.type = 'text';
+					
+			// 	}else {
+			// 		e1.src = 'img/eyenone.png';
+			// 		e.type = 'password';
+			// 	}
+			// 	e2++;
+			// }
+			
+		</script>
+	</body>
+</html>
